@@ -1,0 +1,29 @@
+Controller
+  Tasks
+  Controller
+
+Pics
+  RawPicData
+  Pic
+  Pics
+
+Components
+  Thumbnails
+  ProgressBar
+  Canvas
+  Messages
+
+UI
+  Listeners
+  UI
+
+Operations
+  Register
+  loadScripts
+  Cache
+  History
+  core
+    Compress
+    Downsize
+    QuickCompressAndDownSize
+    Sharpen

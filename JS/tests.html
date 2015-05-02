@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Tests</title>
+ 
+  <link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.17.1.css">
+  <script src="http://code.jquery.com/qunit/qunit-1.17.1.js"></script>
+  <script src="main.js"></script>
+  <link rel="icon" href="favicon.ico" />
+  
+  <script>
+  'use strict'
+
+  let test_pic = "data:image/png;base64,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"
+  
+class MockUI {
+
+  constructor(){
+    this.pics = new Pics();
+    let c = document.createElement('canvas')
+    this.canvas = new Canvas(c);
+    this.progressBar = ''
+    this.dropBoxE = ''
+    
+    this.addPic = bind(this.addPic, this);
+    this.removePic = bind(this.removePic, this);
+  }
+  
+  addPic(pic){}
+  removePic(pic){}
+  get amount(){return 50}
+  set amount(val){}
+  
+  * getCompressedPics(){
+    for (let pic of this.pics){
+      yield pic.compress(this.amount);
+    }
+  }
+  msg(message){}
+  createProgressBar(){}
+  imagesContainerSize(){return [500,500]}
+}
+
+ui = new MockUI()
+
+QUnit.test("test: can add to and retreive from pics object", function( assert ) {
+  let pics = new Pics()
+  let pic = {'name': 'fake_pic'}
+  pics.add(pic)
+  assert.equal(pics.get('fake_pic'), pic);
+});
+
+QUnit.test("test: adding and removing a pic", function( assert ) {
+  assert.equal(ui.pics.size, 0);
+  ui.pics.add({'name': 'fake_pic'})
+  ui.pics.remove('fake_pic')
+  assert.equal(ui.pics.size, 0);
+});
+    
+QUnit.test("test: compressing reduces pic size", function( assert ) {
+  let data = new RawPicData(test_pic)
+  let pic = new Pic(data, 'testPic')
+  assert.ok(pic.compress(100, 20, 20).data.length >  pic.compress(50, 20, 20).data.length);
+});
+
+QUnit.test("test: downsizing reduces pic size", function( assert ) {
+  let data = new RawPicData(test_pic)
+  let pic = new Pic(data, 'testPic')
+  assert.ok(pic.data.length >  pic.compress(100, 5, 5).data.length);
+});
+    
+QUnit.test("test a grayscale image has gray pixels", function( assert ) {
+  let data = new RawPicData(test_pic)
+  let pic = new Pic(data, 'testPic')
+  operations.grayscale(pic)
+  
+  let pixels = ui.canvas.toPixelObj().data
+  let red   = pixels[100*4 + 0];
+  let green = pixels[100*4 + 1];
+  let blue  = pixels[100*4 + 2];
+  
+  assert.equal(red, green);
+  assert.equal(green, blue);
+});
+
+    
+
+  </script>
+</head>
+<body>
+ 
+<div id="qunit"></div>
+ 
+</body>
+</html>

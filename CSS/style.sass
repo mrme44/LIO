@@ -1,0 +1,513 @@
+//Colors
+$background: #F0E9D0
+$sidebar: #D8D8CE
+$buttons: #f1c40f
+$links: #994
+
+//fonts
+$font_0: Lora
+$font_1: serif
+$font_2: Roboto
+$font_3: sans-serif
+
+//resposive sizes
+$phone: 550px
+$tablet: 1000px
+$laptop: 1226px
+$wide-laptop: 1400px
+$desktop: 1600px
+$max-width: 2200px
+$height1: 900px
+$height2: 700px
+
+//urls
+$background-img: url(../images/shattered.png)
+
+=font-sidebar()
+  font-family: $font_2, $font_3
+
+=font-main()
+  font-family: $font_0, $font_1
+
+=clear-spacing()
+  padding: 0
+  margin: 0
+
+  
+  
+/**** some built in tags***
+
+p, ol, li
+  +clear-spacing()
+
+html
+  background: black
+  
+body
+  background: #333
+  max-width: $max-width
+  margin: auto
+a
+  display: block
+  width: 100%
+  text-decoration: none
+  color: $links
+
+h1
+  color: #444
+  text-shadow: 0 1px 0 #FFF9E0, 0 1px 0 #FFF9E0, 0 0 0 #FFF9E0, 0 0 0 #FFF9E0
+  +font-main()
+  padding-top: 1em
+  padding-left: .5em
+
+p, ol, li
+  +font-main()
+
+  
+
+/**** controls/inputs ***
+
+@media (max-width: $laptop)
+  #content
+    display: flex
+
+.controls
+  background-color: $background
+  border-radius: 15px
+  width: 90%
+  display: block
+  margin-left: auto
+  margin-right: auto
+  background-image: $background-img
+  background-repeat: repeat
+  /*background-color: #f1f1d9*/
+  box-shadow: 0px 0px 30px 20px #222
+  div
+    display: inline-block
+    margin: 20px
+  
+.yellow-button
+  width: 100%
+  height: 30px
+  padding: 0
+  font-size: 22px
+  text-align: center
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25)
+  color: white
+  cursor: pointer
+  background: $buttons
+  border-bottom: 2px solid #e2b607
+  box-shadow: inset 0 -2px #e2b607
+  box-sizing: border-box
+  padding-top: 1px
+  /*background: #E0BE35;
+   *box-shadow: inset 0px 0px 6px 4px rgba(80, 80, 80, .1);
+   *border-bottom: 3px solid rgba(137,124,73, .7);
+  &:active
+    top: 1px
+    outline: none
+    -webkit-box-shadow: none
+.disabled
+  opacity: .5
+  pointer-events: none
+    
+.input
+  border: none
+
+input[type="number"]
+  background: #FFF9E0
+
+  
+  
+/**** instructions ***
+
+.intro
+  list-style-type: none
+  *
+    +font-sidebar()
+    font-weight: 300
+  width: 70%
+  margin: auto
+  border-bottom: 2px groove #EEE
+
+li
+  /*padding-left: 2em;
+  margin: 20px
+  display: inline-block
+
+@media (max-width: $desktop) and (min-width: $laptop)
+  .controls div, .intro p, .control
+    margin-left: 0px
+  .controls
+    margin-left: 0px
+    p
+      margin-left: 0px
+  ol, .controls li
+    margin-left: 0px
+  .intro
+    margin-left: 300px
+  h1
+    margin-left: 280px
+  .controls > div:nth-of-type(1)
+    margin-left: 50px
+
+    
+    
+/**** sidebar ***
+
+#sidebar-container
+  width: 250px
+  min-height: 500px
+  float: left
+  
+@media (max-width: $phone)
+#sidebar-container
+  overflow: hidden
+  
+#sidebar
+  background: $sidebar
+  margin: 2em
+  padding: 1.2em
+  *
+    +font-sidebar()
+    font-weight: 300
+
+#sidebar-links
+  details
+    border-radius: 10px
+    margin-bottom: 1em
+    color: $links
+    white-space: normal
+    cursor: normal
+    p
+      margin-left: 6px
+      -webkit-text-stroke: .1px black
+      font-size: .9em
+  summary
+    cursor: pointer
+    &::-webkit-details-marker
+      float: right
+      position: relative
+      top: 3px
+  details a
+    display: inline
+    color: #994
+    font-weight: 400
+    font-size: .9em
+
+#sidebar-header
+  padding: 2px 0
+  margin: -8px -1em
+  background: #222
+  margin-top: .1em
+  text-align: center
+  color: #A9A9B6
+  border-top: 1px solid #777
+  border-bottom: 1px solid #777
+  text-stroke: 1px #000
+
+#sidebar p
+  margin: .4em 0
+
+.group
+  margin: 2em 0
+  display: block
+  white-space: nowrap
+  overflow: visible
+  .normal-whitespace
+    white-space: normal
+.sidebar-color
+  color: #664
+  margin-left: 8px
+details .group
+  display: inline-block
+#sidebar-more > summary
+  display: none
+  
+@media (min-width: $desktop)
+  #sidebar
+    margin: 0
+  #content
+    display: flex
+
+@media (min-width: $laptop)
+  #sidebar, #sidebar-container
+    height: 100%
+
+@media (max-width: $laptop)
+  #sidebar
+    margin: 0
+  .controls
+    width: 100%
+
+@media (max-width: $laptop) and (min-width: $tablet)
+  #sidebar
+    margin: 0
+  #content
+    display: flex
+  .controls
+    margin-left: 10px
+
+@media (max-width: $tablet)
+  #sidebar-container
+    min-height: 200px
+    width: 100%
+    display: none
+  #sidebar
+    padding-bottom: 1em
+    min-height: 200px
+    display: block
+    *
+      display: inline
+  #sidebar-links details
+    width: 200px
+  #sidebar, #sidebar-container, #content, .contents
+    float: none
+    
+    
+    
+/**** some responsive stuff ***
+
+@media (max-width: $desktop) and (min-width: $wide-laptop)
+  .controls
+    width: 100%
+    border-radius: 0
+    margin: 0
+
+@media (max-width: $laptop)
+  li
+    display: block
+  .controls
+    text-align: center
+    > div
+      &:nth-of-type(1), &:nth-of-type(2)
+        width: 90%
+        text-align: center
+  #sidebar
+    position: relative
+    z-index: 1
+    
+@media (max-device-width: $tablet)
+  #dragtext
+    display: none !important
+
+@media (max-width: $phone)
+  br
+    display: none
+  .intro
+    border: none
+    margin-bottom: -20px
+  .controls div
+    margin: 10px
+  h1
+    padding-top: 0
+  .controls, #content
+    +clear-spacing()
+    
+  
+    
+/**** drag and drop ***
+
+#dropbox2
+  &:active
+    background: #E5DFC5
+  &:hover
+    background: #E9E3CA
+    border-radius: 12px
+
+.dropbox
+  border: 3px solid $background
+
+.drag-over
+  opacity: .75
+
+h1, li, .intro, ol
+  pointer-events: none //stop some .controls children from firing the drag-over event
+
+@media (min-width: $laptop)
+  body
+    margin: 0 auto
+  .controls
+    border-top-left-radius: 0
+    border-top-right-radius: 0
+
+@media (max-width: $desktop) and (min-width: $laptop)
+  .controls
+    border-bottom-left-radius: 0
+
+@media (min-width: $desktop)
+  .controls
+    width: 70%
+    text-align: center
+
+    
+    
+/**** file input ***
+
+.fileInput
+  display: none
+  cursor: pointer
+  position: absolute
+  top: 0
+  right: 0
+  font-size: 100px
+  &::-webkit-file-upload-button, &::-ms-browse
+    visibility: hidden
+
+#dragtext
+  color: #555
+  display: inline
+  
+#amount
+  width: 50px
+  
+#dropbox2 > .yellow-button
+  height: 30px
+  width: 120px
+  
+  
+  
+/**** progress bar ***
+
+#progress_bar
+  display: block
+  margin: 10px 0
+  padding: 3px
+  border: 1px solid #000
+  font-size: 14px
+  clear: both
+  opacity: 0
+  height: 10px
+  transition: opacity 1s linear
+  #progress
+    background-color: #99ccff
+    height: auto
+    width: 0
+    opacity: 0
+.loading
+  opacity: 1 !important
+
+progress::progress-value
+  background-color: ee3
+  
+  
+/***** make responsive height-wise
+
+@media (max-height: $height1) and (min-width: $phone) and (max-width: $laptop)
+  h1
+    float: left
+    padding-left: 1em
+    margin: 0
+    padding-top: 67px
+  .intro
+    text-align: left
+    margin-left: 250px
+    width: 100%
+    border-bottom: none
+    
+@media (max-height: $height2) and (min-width: $phone)
+  .controls > div
+    margin-top: 0
+    margin-bottom: 0
+    
+  @media (max-width: $laptop)
+    .controls > div
+      +clear-spacing()
+      margin-bottom: .5em
+  h1, .intro
+    padding: 0 inherit
+    margin: 0 inherit
+    display: flex
+  h1
+    padding-left: 10px
+    float: left
+  .intro
+    float: right
+
+  @media (min-width: $desktop)
+    .intro
+      float: none
+  
+      
+      
+/**** close button ***
+
+.x
+  color: #777
+  font: 14px/100% arial, sans-serif
+  text-decoration: none
+  text-shadow: 0 1px 0 #AAE
+  cursor: pointer
+  
+  float: right
+  //top: 3px
+  //right: 7px
+  bottom: 75px + 3px
+  left: 100px + 6px
+  z-index: 1
+
+.thumb-x
+  position: absolute
+  float: none
+
+.x:hover
+  color: #D44
+  
+.x:after
+  background: rgba(0,0,0,.85)
+  border-radius: 2px/5px
+  padding-right: 2px
+  padding-left: 1px
+  padding-bottom: 1px
+  content: 'X'
+  //content: '✖'
+      
+      
+
+/**** Images ***
+
+.thumb
+  height: 75px
+  border: 1px solid #000
+  margin: 0px 5px 15px 5px
+
+#images-container
+  display: flex
+  margin-top: 10px
+  
+  
+  
+/**** Messages ***
+
+#message-list
+  max-height: 300px
+  margin: 0 auto
+  overflow-y: auto
+  //overflow-x: visible //can't easily use overflow-x when overflow-y is set to visible :(
+  position: relative
+  width: 50%
+
+.message
+  display: block
+  text-align: center
+  width: 95%
+  margin: 3px auto
+  border: #BBB groove 1px
+  h2
+    +clear-spacing()
+    margin-bottom: 5px
+
+.inner-message
+  background: #E9E3CA
+  padding: 1em
+  min-height: 20px
+  
+.error
+  background: #F0C3AF
+  
+  
+  
+/**** Misc ***
+  
+#tickmarks
+  display: none

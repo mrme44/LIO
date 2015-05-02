@@ -1,0 +1,84 @@
+MISC/UNCATEGORIZED
+use seperate canvas for edits and remove ability to force canvas to ignore maxWidth and maxHeight (create previewCanvas and normal canvas obj that won't have maxWidth and maxHeight)
+operations should be able to be calleed with pixels being passed to it instead of a pic object
+put code on github
+ui.removePics shouldn't ever be called (use pics.remove instead), but it looks as if ui.removePics should be called. Either change ui.removePics to ui._removePics, or possibly add support for there to be an inconsistancy between ui and ui.pics but this should be done in a way that pics wouldn't accidentally be removed this way
+Images aren't resizing up to max_width or max_height
+refind responsive values -- & glitchy right before 1600px at max height
+throw a better error when opening an empty (0kb) picture
+CompressorError needs to store a stack trace -- (inherit off Error and then nicely format this.stack)
+redo method signature of errors
+CompressorError needs to save and accept stack traces. The operations object needs to use this feature.
+refactor download function
+add a test to check that the slider and associated number are always the same
+disable compression slider when there are no images loaded
+Bug: duplicate thumbnails show up -- should also be showing a message when a duplicate is found
+write more tests
+seperate modules will need to be more strict about throwing exceptions when communicating with other modules
+switch to using scss
+
+UX
+rebrand site with the new logo
+create a new favicon
+bug: the program will overwrite files without prompting the user if this is okay
+Create fixed sized space for messages to show up in without affecting the flow of things
+Bug: It's possible to move the compression amount above 100 in the UI by changing the compression # through the text box arrow
+Bug: vertical padding is off for Chrome Apps (problably caused by the app zooming everything out)
+Bug: Chrome app save button improperly positioned in tablet view
+scrollbar gets cut off when resizing horizontally in laptop mode -- add scrollbar
+label preview box
+fix padding of upload button in laptop mode
+make hovering over a picture display the picture's name
+bug: flickering when dragging images over controls
+clicking intro text highlight associtated div with animation
+allow sorting images by dragging
+
+ENHANCEMENTS
+Add settings popup
+add spanish support
+generate documentation
+Add ability to zip files
+Add ability to log errors to a SQL server
+Use better algorithm for downsizing
+original image button
+mouseover shows image name
+mouseover thumbnail shows original thumbnail, possibly
+possibly Create another canvas off-screen for performing comrpession/downsizing operations on without having to worry about which picture is being displayed to the user
+rename file input ids
+allow canvas to be resized -- put canvas inside a textarea, or some other element with overflow that has the css property resize: both
+
+VERSION 2 FEATURES
+create history Object
+remove compression caching when switching operations -- fix caching in general
+make it so operations can be chained
+Show Sidebar in phone view
+
+VERSION 2 FEATURES ONLY
+split JS file into multiple files
+animations for uploading pics
+individual progress bar for each image
+click on picture to view it on canvas & make it possible to use seperate compression values for each picture
+asynchrously compress multiple images
+Add ability to sharpen images
+Add the ability to downsize an image
+
+VERSION 2 BUGS
+progress bar only appears for first pic on multiple uploads --  enhancement seperating progress bars for pics will fix
+need to save preview pic for each edit
+
+PROBABLY WON'T FIX THESE
+Allow messages to overflow horizontally -- https://css-tricks.com/popping-hidden-overflow/
+disable upload button while uploading -- no way of detecting when a file upload window was cancelled
+possibly use toastr for displaying messages
+show example image the first the site is visited -- this can't be tested locally
+canvas gets messed up with too many thumbnails -- enhancement: fixing downsizing algorithm might fix this
+ask the user if they want to restore pics, if they navigate away from the page -- would have to be done as a chrome extension, or with chrome's file api
+
+PRE-RELEASE
+redo and verify widths at which the site responsivly changes
+update version number in index.html and manifest file
+take main.js out of debug mode
+make sure there are no extra console.log statements
+minify scripts
+run test suite
+verify that everything is working in Chrome and on a Chrome App

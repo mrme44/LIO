@@ -1,0 +1,110 @@
+<!-- Alpha Version 1.1 -->
+<!-- Only works on Chrome -->
+<!-- may need to enable chrome://flags/#enable-javascript-harmony -->
+<html manifest="http://compressor.mrme.me/cache.manifest">
+<head>
+
+<title>Compressor</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="js/main.js"></script>
+<link href='fonts/fonts.css' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/style.css">
+<!--<link rel="icon" href="favicon.ico" />
+
+<!-- doesn't work in Chrome Apps -- <script>
+
+/*check for HTML5 support*/
+if (!('querySelector' in document && 'localStorage' in window && 'addEventListener' in window)) {
+  console.log('outdated')
+  window.location.assign("http://outdatedbrowser.com/en")
+}
+/*check for JS6 support*/
+try{
+  'test'.startsWith('t')
+} catch(e){
+  window.location.assign("http://outdatedbrowser.com/en")
+}
+</script> -->
+
+</head>
+<body>
+
+<div id=container>
+<div id=sidebar-container>
+<div id=sidebar>
+    
+  <!-- <div id=sidebar-header><p>Extra Info</p></div> -->
+    
+  <div class='group, normal-whitespace'>
+    <p>The only image compressor that works</p>
+    <p class='sidebar-color'>Faster</p>
+    <p class='sidebar-color'>Offline</p>
+    <p class='sidebar-color'>With Batch Processing</p>
+  </div>
+  
+  <details id="sidebar-more" open>
+    <summary>more info</summary>
+    <div class=group>
+      <p>Similar Compressors</p>
+      <p><a href="http://nodeca.github.io/pica/demo/">Pica</a></p>
+      <p><a href="http://makeitsolutions.com/labs/jic/">JIC</a></p>
+      <p><a href="http://Compressor.io">Compressor.io</a></p>
+    </div>
+    
+    <div id=sidebar-links class=group>
+      <p>Links</p>
+      <details>
+        <summary>About the developer</summary><p>If you love the technicalities of photographry, view my blog <a href='about.html'>Here</a></p>
+      </details>
+      <details><summary>Technical info</summary><p>The technical details about this app can be found <a href='technical.html'>Here</a></p></details>
+    </div>
+  </details>
+</div>
+</div>
+
+<div id=content>
+<div class="controls" id="dropbox">
+  
+  <h1>LIO Image Optimizer</h1><br />
+  <p><ol class="intro"><li> 1) Add an image. </li><li> 2) Choose a compression value. </li><li> 3) Click the download button.</li></ol></p>
+
+  <div id="dropbox2" class="inputWrapper control">
+  <a id='openFileOpener'></a>
+  <input type="file" class="fileInput" id="files" accept="image/*" multiple/>
+    <div class="yellow-button"><span>Add Images</span>
+    </div><p id="dragtext">( or drag images here ) &nbsp;</p>
+  </div>
+
+  <div class=control>
+    <label for=fader>Compress</label>
+    <input type=range min=0 max=100 value='' id=slider list="tickmarks">
+    <datalist id="tickmarks">
+      <option>0</option>
+      <option>20</option>
+      <option>40</option>
+      <option>60</option>
+      <option>80</option>
+      <option>100</option>
+    </datalist>
+    <input type="number" id="amount" value=""></input>
+  </div>
+  
+    <div class=control><a id="download" class="yellow-button" download="">&nbsp; Download Images &nbsp;</a></div>
+  
+</div>
+</div>
+  
+<div id="message-list"></div>
+  
+<div id="images-container">
+  <!--<button onclick="fileCancel();">Cancel Upload</button>-->
+  <progress id="progress_bar" max=100><div id="progress">0%</div></progress>
+  
+  <output id="image-list"></output>
+  <canvas id="canvas"></canvas>
+</div>
+<div id=container>
+</body>
+</html>
+

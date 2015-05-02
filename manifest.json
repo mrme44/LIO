@@ -1,0 +1,23 @@
+{
+  "name": "LIO's Batch Image Compressor",
+  "description": "Preparing images for the web should be a quick process. We want to make it quick. \n\n Note: many more features are coming.",
+  "version": "2",
+  "version_name": "2.0 alpha",
+  "minimum_chrome_version": "42",
+  "manifest_version": 2,
+  "app": {
+    "background": {
+      "scripts": ["js/background.js"]
+    }
+  },
+  "permissions": [
+  "storage",
+  {"fileSystem": ["write", "retainEntries", "directory"]},
+  "notifications",
+  "contextMenus",
+  "fileSystem",
+  "syncFileSystem",
+  "commands"
+  ],
+  "icons": { "16": "images/icons/cropped-16.png", "48": "images/icons/cropped-48.png", "128": "images/icons/cropped-100.png" }
+}
